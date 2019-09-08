@@ -58,19 +58,13 @@ def draw?(board)
 end
 
 def over?(board)
-  if won?(board) == true || over?(board) == true
-    true
+  isover = false
+  if won?(board).is_a?(Array) || draw?(board) == true
+    isover = true
   end
+  isover
 end
 
-def winner?(board)
-  if won?(board) == true
-    if win_combination[1] == "X" && win_combination[2] == "X" && win_combination[3] == "X"
-      puts "X"
-    else
-      puts "O"
-    end
-  else
-    nil
-  end
-end
+def winner(board)
+  win = won?(board)
+  if win.is_a(Array)
