@@ -68,7 +68,7 @@ end
 def winner(board)
   win = won?(board)
   winner = nil
-  if win.is_a(Array)
+  if win.is_a?(Array)
     if board[win[1]] == "X"
       winner = "X"
     elsif board[win[1]] == "O"
